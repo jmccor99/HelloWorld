@@ -1,12 +1,12 @@
 # Aspnetcore HelloWorld using Docker
 
-Learn how to build a Docker image and run a container using that image. Requires Docker for Windows and Hyper-V
+Learn how to build a Docker image and run a container using that image. Requires Docker for Windows, Hyper-V and git
 
 ## Getting Started
 
 Clone the helloworld repo
 
-open cmd.exe 
+open Powershell.exe 
 
 mkdir c:\docker\helloworld
 
