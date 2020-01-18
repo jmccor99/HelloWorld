@@ -5,14 +5,21 @@ Learn how to build a Docker image and run a container using that image. Requires
 ## Getting Started
 
 Clone the helloworld repo
+
 open cmd.exe 
+
 mkdir c:\working\docker\helloworld
+
 cd c:\working\docker\helloworld
+
 git clone xxx
+
 cd helloworld
 
 List the current Docker images and containers
+
 docker images
+
 docker ps -a
 
 ### Building the helloworld image and starting a container using the image
@@ -40,7 +47,9 @@ The build image layers are thrown away during docker build and only the runtime 
 ## Run a new container using the helloworld:latest image
 
 We are going to create and start a new container using the helloworld:latest image. 
+
 We will publish the container port 5001 to the host
+
 We will detach from the container and run it in the background
 
 docker run -d -p 5001:5001 helloworld:latest
@@ -76,4 +85,5 @@ docker rmi helloworld:latest
 ## Remove the base images
 
 docker rmi mcr.microsoft.com/dotnet/core/sdk:3.1-alpine
+
 docker rmi mcr.microsoft.com/dotnet/core/aspnet:3.1-alpine
