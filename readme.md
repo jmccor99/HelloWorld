@@ -62,13 +62,11 @@ docker ps -a --filter ancestor=helloworld:latest
 
 docker exec {containerid} ls
 
-## Look inside the helloworld:latest container
+## Browse to the helloworld web site running inside the helloworld:latest container
 
-Find the running container instance of helloworld:latest
+Open a browser on the host
 
-docker ps -a --filter ancestor=helloworld:latest
-
-docker exec {containerid} ls
+http://localhost:5001/
 
 ## Stop the helloworld:latest container
 
