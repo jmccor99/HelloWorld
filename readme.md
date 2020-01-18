@@ -12,7 +12,7 @@ mkdir c:\working\docker\helloworld
 
 cd c:\working\docker\helloworld
 
-git clone xxx
+git clone https://github.com/jmccor99/HelloWorld.git
 
 cd helloworld
 
