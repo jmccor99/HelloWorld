@@ -85,3 +85,13 @@ docker rmi helloworld:latest
 docker rmi mcr.microsoft.com/dotnet/core/sdk:3.1-alpine
 
 docker rmi mcr.microsoft.com/dotnet/core/aspnet:3.1-alpine
+
+## Building the helloworld image and starting a container using docker compose
+
+docker build . --tag helloworld:latest
+
+docker-compose up --build -d
+
+docker-compose down
+
+docker-compose up -d

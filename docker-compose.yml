@@ -1,0 +1,8 @@
+version: '3'
+services:
+  helloworld:
+    build: .
+    ports:
+      - "5001:5001"
+  helloworld:
+    image: "helloworld:latest"
