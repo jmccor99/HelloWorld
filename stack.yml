@@ -1,0 +1,8 @@
+version: "3.7"
+services:
+  helloworld:
+    image: jmccor99/helloworld:latest
+    deploy:
+        replicas: 2
+    ports:
+     - "5001:5001"

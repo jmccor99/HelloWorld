@@ -1,6 +1,6 @@
 # Aspnetcore HelloWorld using Docker
 
-Learn how to build a Docker image and run a container using that image. Requires Docker for Windows, Hyper-V and git
+Learn how to build a Docker image and run a container using that image. Requires Docker for Windows with Kubernetes, Hyper-V and git
 
 ## Getting Started
 
@@ -86,13 +86,24 @@ docker rmi mcr.microsoft.com/dotnet/core/sdk:3.1-alpine
 
 docker rmi mcr.microsoft.com/dotnet/core/aspnet:3.1-alpine
 
+## Setup Docker hub account
+
+Sign up to https://hub.docker.com/
+
+docker login -u xxxxx -p
+enter password
+
 ## Building the helloworld image and starting a container using docker compose
+
+Edit the docker-compose.yml file and replace jmccor99 with your docker hub user name
 
 docker-compose up --build -d
 
 docker-compose down
 
 docker-compose up -d
+
+docker-compose down
 
 ## Tidy up
 
@@ -101,4 +112,27 @@ docker stop $(docker ps -aq)
 docker rm $(docker ps -aq)
 
 docker rmi --force $(docker images -aq)
+
+## Use Docker stack to deploy a pod of helloworld:latest image containers to kubernetes using docker compose file
+
+docker stack deploy --orchestrator=kubernetes -c docker-compose.yml helloworld
+
+docker stack ls
+
+docker stack ps helloworld
+
+docker stack services helloworld
+
+View the k8s configuration
+
+kubectl get nodes
+
+kubectl get services
+
+kubectl get pods
+
+kubectl describe pods xxxxxxxxx
+
+kubectl get rs
+
 

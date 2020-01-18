@@ -4,5 +4,6 @@ services:
     build:
         dockerfile: Dockerfile
         context: .
+    image: jmccor99/helloworld:latest
     ports:
       - "5001:5001"
