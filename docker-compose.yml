@@ -1,6 +1,6 @@
 version: '3'
 services:
-  helloworld:
+  compose:
     build: .
     ports:
       - "5001:5001"

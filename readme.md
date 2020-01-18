@@ -88,10 +88,21 @@ docker rmi mcr.microsoft.com/dotnet/core/aspnet:3.1-alpine
 
 ## Building the helloworld image and starting a container using docker compose
 
+Create the helloworld image, otherwise Docker will try to find the helloworld image from Docker hub
+
 docker build . --tag helloworld:latest
 
-docker-compose up --build -d
+docker-compose up
 
 docker-compose down
 
 docker-compose up -d
+
+## Tidy up
+
+docker stop $(docker ps -aq)
+
+docker rm $(docker ps -aq)
+
+docker rmi --force $(docker images -aq)
+
