@@ -8,9 +8,9 @@ Clone the helloworld repo
 
 open cmd.exe 
 
-mkdir c:\working\docker\helloworld
+mkdir c:\docker\helloworld
 
-cd c:\working\docker\helloworld
+cd c:\docker\helloworld
 
 git clone https://github.com/jmccor99/HelloWorld.git
 
