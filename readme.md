@@ -97,6 +97,8 @@ enter password
 
 Edit the docker-compose.yml file and replace jmccor99 with your docker hub user name
 
+Build the helloworld:latest image and push to docker hub. Create and run a container using docker hub
+
 docker-compose up --build -d
 
 docker-compose down
@@ -113,15 +115,19 @@ docker rm $(docker ps -aq)
 
 docker rmi --force $(docker images -aq)
 
-## Use Docker stack to deploy a pod of helloworld:latest image containers to kubernetes using docker compose file
+## Use Docker stack to deploy a pod of helloworld:latest image containers to kubernetes using docker stack file
 
-docker stack deploy --orchestrator=kubernetes -c docker-compose.yml helloworld
+Edit the docker-compose.yml file and replace jmccor99 with your docker hub user name
+
+docker stack deploy --orchestrator=kubernetes -c stack.yml helloworld
 
 docker stack ls
 
 docker stack ps helloworld
 
 docker stack services helloworld
+
+stop 
 
 View the k8s configuration
 
@@ -134,5 +140,12 @@ kubectl get pods
 kubectl describe pods xxxxxxxxx
 
 kubectl get rs
+
+kubectl delete -n default deployment helloworld
+
+kubectl delete svc helloworld
+
+kubectl delete svc helloworld-published
+
 
 
