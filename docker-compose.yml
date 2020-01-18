@@ -1,8 +1,8 @@
 version: '3'
 services:
   compose:
-    build: .
+    build:
+        dockerfile: Dockerfile
+        context: .
     ports:
       - "5001:5001"
-  helloworld:
-    image: "helloworld:latest"
