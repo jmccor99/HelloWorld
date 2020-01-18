@@ -42,7 +42,7 @@ The helloworld:latest image which is made up of the runtime image layers
 
 Use docker history imageid to view the layers in each image
 
-The build image layers are thrown away during docker build and only the runtime image layers are used to create the helloworld:latest image. This is a key part of the docker build multi phase build process. It allows to reduce the size of the runtime image by not including the image layers that we do not need.
+The build image layers are thrown away during docker build and only the runtime image layers are used to create the helloworld:latest image. This is a key part of the docker multi phase build process. It allows to reduce the size of the runtime image by not including the image layers that we do not need.
 
 ## Run a new container using the helloworld:latest image
 
