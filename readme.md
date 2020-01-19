@@ -90,8 +90,10 @@ docker rmi mcr.microsoft.com/dotnet/core/aspnet:3.1-alpine
 
 Sign up to https://hub.docker.com/
 
-docker login -u xxxxx -p
-enter password
+Replace jmccor99 with your docker hub user name and password
+
+docker login -u jmccor99
+enter password:
 
 ## Building the helloworld image and starting a container using docker compose
 
@@ -100,6 +102,10 @@ Edit the docker-compose.yml file and replace jmccor99 with your docker hub user 
 Build the helloworld:latest image and push to docker hub. Create and run a container using docker hub
 
 docker-compose up --build -d
+
+docker-compose push
+
+docker ps -a
 
 docker-compose down
 
@@ -119,17 +125,19 @@ docker rmi --force $(docker images -aq)
 
 Edit the docker-compose.yml file and replace jmccor99 with your docker hub user name
 
+open the docker for windows settings and go to the kubernetes tab. Enable deploy docker stacks to kubernetes by default.
+
+docker swarm init
+
 docker stack deploy --orchestrator=kubernetes -c stack.yml helloworld
 
 docker stack ls
 
 docker stack ps helloworld
 
-docker stack services helloworld
+docker stack services helloworld 
 
-stop 
-
-View the k8s configuration
+View the kubernetes configuration
 
 kubectl get nodes
 
@@ -137,15 +145,21 @@ kubectl get services
 
 kubectl get pods
 
-kubectl describe pods xxxxxxxxx
-
 kubectl get rs
 
+## Have some fun
+
+kubectl delete pods
+
+kubectl get pods
+
 kubectl delete -n default deployment helloworld
+
+kubectl get pods
 
 kubectl delete svc helloworld
 
 kubectl delete svc helloworld-published
 
-
+docker stack rm helloworld
 
