@@ -165,3 +165,15 @@ kubectl delete svc helloworld-published
 
 docker stack rm helloworld
 
+## Use Docker stack to deploy a group of helloworld:latest image containers to swarm using docker stack file
+
+docker stack deploy --orchestrator=swarm -c stack.yml helloworld
+
+docker stack services --orchestrator=swarm helloworld
+
+docker stack ps --orchestrator swarm helloworld
+
+docker stack ls --orchestrator swarm
+
+docker stack rm --orchestrator swarm helloworld
+
