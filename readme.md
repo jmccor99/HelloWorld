@@ -151,13 +151,15 @@ kubectl get rs
 
 kubectl delete pods
 
-kubectl get pods
+kubectl get pods name
 
 kubectl delete -n default deployment helloworld
 
-kubectl get pods
+kubectl get pods name
 
 kubectl delete svc helloworld
+
+kubectl get svc
 
 kubectl delete svc helloworld-published
 
