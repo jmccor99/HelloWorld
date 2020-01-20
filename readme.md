@@ -86,18 +86,7 @@ docker rmi mcr.microsoft.com/dotnet/core/sdk:3.1-alpine
 
 docker rmi mcr.microsoft.com/dotnet/core/aspnet:3.1-alpine
 
-## Setup Docker hub account
-
-Sign up to https://hub.docker.com/
-
-Replace jmccor99 with your docker hub user name and password
-
-docker login -u jmccor99
-enter password:
-
 ## Building the helloworld image and starting a container using docker compose
-
-Edit the docker-compose.yml file and replace jmccor99 with your docker hub user name
 
 Build the helloworld:latest image and push to docker hub. Create and run a container using docker hub
 
@@ -122,8 +111,6 @@ docker rm $(docker ps -aq)
 docker rmi --force $(docker images -aq)
 
 ## Use Docker stack to deploy a pod of helloworld:latest image containers to kubernetes using docker stack file
-
-Edit the docker-compose.yml file and replace jmccor99 with your docker hub user name
 
 open the docker for windows settings and go to the kubernetes tab. Enable deploy docker stacks to kubernetes by default.
 
